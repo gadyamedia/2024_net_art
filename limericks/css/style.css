@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: yellow;
+    text-align: center;
+}
+h1 {
+    font-style: italic;
+    padding-top: 10px;
+}
+p {
+    font-size: 45px;
+}
+.title {
+    font-weight: bold;
+}
+#theend {
+    color: blue;
+}
+div {
+    padding: 50px;
+    margin: 80px;
+    border: 10px solid black;
+ }
