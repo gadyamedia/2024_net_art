@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Early 2000s Revisited</title>
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+        // Make the content draggable
+        $("#content").draggable({ handle: "h1.title" });
+
+        // Array of images and their associated texts
+        const data = [
+            { 
+                image: "img/art1.png", 
+                text: `<strong>Jodi.org</strong> (1995): 
+                Jodi.org is responsible for many of the best-loved Internet artworks of the ‘90s. 
+                Shown in the image is the home page of Jodi.org, which appears chaotic but reveals intricate patterns and hidden layers in its source code. 
+                <a href="https://wwwwwwwww.jodi.org/" target="_blank">Visit Jodi.org</a>` 
+            },
+            { 
+                image: "img/art2.jpeg", 
+                text: `<strong>My Boyfriend Came Back From the War |  Olia Lialina</strong> (1996): 
+                Was considered one of the most influential pieces of the net art of the 1990s and highlights the primitivity of net art in that time. 
+                <a href="http://www.teleportacia.org/war/" target="_blank">Visit My Boyfriend Came Back From the War</a>` 
+            },
+            { 
+                image: "img/art3.jpg", 
+                text: `<strong>Own, Be Owned or Remain Invisible | Heath Bunting</strong> (2003): 
+                Was an important piece at the time because it highlighted the privation of the internet. <a href="https://www.irational.org/_readme.html" target="_blank">Visit Own, Be Owned or Remain Invisible</a>` 
+            }
+        ];
+        let currentIndex = 0;
+
+        // Update the image and text
+        function updateContent() {
+            $(".icon img").attr("src", data[currentIndex].image);
+            $(".description").html(data[currentIndex].text);
+        }
+
+        // Next Image button click handler
+        $(".command_button").click(function () {
+            currentIndex = (currentIndex + 1) % data.length;
+            updateContent();
+        });
+
+        // Initialize the first image and text
+        updateContent();
+    });
+  </script>
+</head>
+<body>
+  <noscript><p><em>This page requires JavaScript.</em></p></noscript>
+  <div id="content" class="content">
+    <div class="control-box close-box"><a class="control-box-inner"></a></div>
+    <div class="control-box zoom-box"><div class="control-box-inner"><div class="zoom-box-inner"></div></div></div>
+    <div class="control-box windowshade-box"><div class="control-box-inner"><div class="windowshade-box-inner"></div></div></div>
+    <h1 class="title">Step Back in the 1990 - 2000s</h1>
+    <div class="inner">
+      <div>
+        <p>
+          My exhibition of net art explores the net art of 1990-2000, a time period of the internet where it was less polished (compared to today), and creativity flourished within its constraints. It was a fascinating chapter in the history of net art, described as a “radical” time for the World Wide Web. During this time, personal computers and the web were new, so the art was primitive compared to today—but that is the beauty of this era. Early net artists were able to take minimal tools and create remarkable works. The pieces in my exhibition showcase how basic yet creative the early internet was compared to today.
+        </p>
+      </div>
+      <div class="icon"><img src="" alt="Artwork" width="350px" /></div>
+      <p class="description"></p>
+      <button class="command_button">Next Image</button>
+    </div>
+  </div>
+</body>
+</html>
