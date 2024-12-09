@@ -24,11 +24,11 @@ html, body {
 .item {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .item1 {
     background-image: linear-gradient(red, yellow);
-
 }
 
 .item2 {
@@ -46,4 +46,37 @@ html, body {
 .item5 {
     background-image: linear-gradient(purple, yellow);
 }
-  
+
+/* New patterns */
+.item6 {
+    background-image: radial-gradient(circle, red, yellow, blue);
+}
+
+.item7 {
+    background-image: conic-gradient(from 0deg, red, yellow, green, blue, purple);
+}
+
+/* Animation for pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.item {
+    animation: pulse 3s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .full-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+    }
+}
